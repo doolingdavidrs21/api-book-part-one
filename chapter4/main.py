@@ -33,7 +33,7 @@ def read_players(skip: int = 0,
     players = crud.get_players(db,
                                skip=skip,
                                limit=limit,
-                               min_last_changed_date=minimum_last_chaged_date,
+                               min_last_changed_date=minimum_last_changed_date,
                                first_name=first_name,
                                last_name=last_name)
     return players
