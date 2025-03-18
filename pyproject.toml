@@ -5,6 +5,8 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "fastapi[standard]>=0.115.11",
+    "httpx>=0.28.1",
     "jupyter>=1.1.1",
     "jupyter-ruff>=0.2.0",
     "jupytext>=1.16.7",
@@ -14,6 +16,7 @@ dependencies = [
     "ruff>=0.11.0",
     "scipy>=1.15.2",
     "sqlalchemy>=2.0.39",
+    "uvicorn>=0.34.0",
 ]
 
 [dependency-groups]
