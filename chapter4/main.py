@@ -111,3 +111,5 @@ def get_count(db: Session = Depends(get_db)):
         player_count = crud.get_player_count(db))
     
     return counts
+
+# checking root vs davidd as user in vs code terminal
