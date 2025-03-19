@@ -5,7 +5,8 @@ from sqlalchemy.orm import Session
 from datetime import date
 
 
-import crud, schemas
+import crud
+import schemas
 from database import SessionLocal
 
 api_description = """
