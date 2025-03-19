@@ -97,3 +97,7 @@ To use this endpoint, you can make a GET request like:
 curl "http://localhost:8000/v0/players/?limit=5&first_name=Tom"
 ```
 
+## Software Development Kit (SD)
+*Coming Soon*
+
+Check back for the Python SDK for our API.
