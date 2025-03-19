@@ -6,7 +6,31 @@ from datetime import date
 import crud, schemas
 from database import SessionLocal
 
-app = FastAPI()
+api_description = """
+This API provides read-only access to info from the SportsWorldCentral
+(SWC) Fantasy Football API.
+The endpoints are grouped into the following categories:
+
+## Analytics
+Get information about the health of the API and counts of leagues, teams,
+and players.
+
+## Player
+You can get a list of NFL players, or search for an individual player by
+player_id.
+
+## Scoring
+You can get a list of NFL player performances, including the fantasy points
+they scored using SWC league scoring.
+
+## Membership
+Get information about all the SWC fantasy football leagues and the teams in them."""
+
+app = FastAPI(
+    description = api_description,
+    title="Sports World Central (SWC) Fantasy Football API",
+    version="0.1"
+)
 
 # Dependency
 def get_db():
