@@ -40,7 +40,7 @@ def test_read_performances():
 # test /v0/performances/ with changed date
 def test_read_performances_by_date():
     response = client.get(
-        "v0/performances/?skip=0&limit=20000&minimum_last_changed_date=2024-04-01"
+        "/v0/performances/?skip=0&limit=20000&minimum_last_changed_date=2024-04-01"
     )
     assert response.status_code == 200
     assert len(response.json()) == 2711
