@@ -1,6 +1,6 @@
 # SportsWorldCentral (SWC) Fantasy Football API Documenation
 
-Thanks for using the SportsWorldCentral API. This is your one-stop shop for 
+Thanks for using the SportsWorldCentral API. This is your one-stop shop for
 accessing data from our fantasy football webiste, www.Sportsworldcentral.com.
 
 
@@ -31,7 +31,7 @@ JSON data.
 
 ### Analytics
 
-Get information about the health of the API and counts of leagues, teams, 
+Get information about the health of the API and counts of leagues, teams,
 and players.
 
 ### Player
@@ -52,7 +52,7 @@ Get information about all the SWC fantasy football leagues and the teams in them
 
 By using the API, you agree to the following terms of service:
 
-- **Usage Limits**: You are allowed up to 2000 requests per day. Exceeding this 
+- **Usage Limits**: You are allowed up to 2000 requests per day. Exceeding this
                     limit may result in your API key being suspended.
 - **No Warranty**: We don't provide any warranty of the API or its operation.
 
@@ -97,7 +97,7 @@ To use this endpoint, you can make a GET request like:
 curl "http://localhost:8000/v0/players/?limit=5&first_name=Tom"
 ```
 
-## Software Development Kit (SD)
+## Software Development Kit (SDK)
 *Coming Soon*
 
 Check back for the Python SDK for our API.
