@@ -50,41 +50,41 @@ def test_get_league(db_session):
     """Tests you can get a league"""
     league = autocrud.get_league(db_session, league_id = 5002)
     assert league.league_id == 5002
-    assert len(league.teams) == 8
+    assert len(league.team) == 8
 
 
 
 def test_get_leagues(db_session):
     """Tests that the count of leagues in the database is what is expected"""
-    leagues = crud.get_leagues(db_session, skip=0, limit=10000, min_last_changed_date=test_date)
+    leagues = autocrud.get_leagues(db_session, skip=0, limit=10000, min_last_changed_date=test_date)
     assert len(leagues) == 5
 
 
 def test_get_teams(db_session):
     """Tests that the count of teams in the database is what is expected"""
-    teams = crud.get_teams(db_session, skip=0, limit=10000, min_last_changed_date=test_date)
+    teams = autocrud.get_teams(db_session, skip=0, limit=10000, min_last_changed_date=test_date)
     assert len(teams) == 20
 
 def test_get_teams_for_one_league(db_session):
     """Tests that the count of teams in the database is what is expected"""
-    teams = crud.get_teams(db_session, league_id=5001)
+    teams = autocrud.get_teams(db_session, league_id=5001)
     assert len(teams) == 12
     assert teams[0].league_id == 5001
 
 def test_get_team_players(db_session):
     """Tests that a team record can retrieve players, and that 8 players are on the first team"""
-    first_team = crud.get_teams(db_session, skip=0, limit=1000, min_last_changed_date=test_date)[0]
-    assert len(first_team.players) == 7
+    first_team = autocrud.get_teams(db_session, skip=0, limit=1000, min_last_changed_date=test_date)[0]
+    assert len(first_team.team_player) == 7
 
 #test the count functions
 def test_get_player_count(db_session):
-    player_count = crud.get_player_count(db_session)
+    player_count = autocrud.get_player_count(db_session)
     assert player_count == 1018
 
 def test_get_team_count(db_session):
-    team_count = crud.get_team_count(db_session)
+    team_count = autocrud.get_team_count(db_session)
     assert team_count == 20
 
 def test_get_league_count(db_session):
-    league_count = crud.get_league_count(db_session)
+    league_count = autocrud.get_league_count(db_session)
     assert league_count == 5
