@@ -6,6 +6,9 @@ from database import Base
 
 
 class Player(Base):
+    """
+    Docstring for Player
+    """
     __tablename__ = "player"
 
     player_id = Column(Integer, primary_key=True, index=True)
@@ -19,8 +22,8 @@ class Player(Base):
 
 
     # Many-to-many relationship between Player and Team tables
-    teams = relationship("Team", secondary="team_player", 
-                         back_populates="players")    
+    teams = relationship("Team", secondary="team_player",
+                         back_populates="players")
 
 
 class Performance(Base):
@@ -52,23 +55,23 @@ class Team(Base):
 
     team_id = Column(Integer, primary_key=True, index=True)
     team_name = Column(String, nullable=False)
-    last_changed_date = Column(Date, nullable=False)    
+    last_changed_date = Column(Date, nullable=False)
 
     league_id = Column(Integer, ForeignKey("league.league_id"))
 
     league = relationship("League", back_populates="teams")
 
-    players = relationship("Player", secondary="team_player", 
+    players = relationship("Player", secondary="team_player",
                            back_populates="teams")
 
 class TeamPlayer(Base):
     __tablename__ = "team_player"
 
-    team_id = Column(Integer, ForeignKey("team.team_id"), 
+    team_id = Column(Integer, ForeignKey("team.team_id"),
                      primary_key=True, index=True)
-    player_id = Column(Integer, ForeignKey("player.player_id"), 
+    player_id = Column(Integer, ForeignKey("player.player_id"),
                        primary_key=True, index=True)
-    last_changed_date = Column(Date, nullable=False)    
+    last_changed_date = Column(Date, nullable=False)
 
-    
+
 

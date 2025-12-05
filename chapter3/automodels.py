@@ -2,10 +2,12 @@ from typing import Optional
 import datetime
 
 from sqlalchemy import Date, Float, ForeignKey, Integer, String
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
+#from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from database import Base
 
-class Base(DeclarativeBase):
-    pass
+#class Base(DeclarativeBase):
+#    pass
 
 
 class League(Base):
