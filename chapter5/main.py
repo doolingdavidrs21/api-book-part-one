@@ -10,8 +10,11 @@ import schemas
 from database import SessionLocal
 
 api_description = """
-This API provides read-only access to info from the Sports World Central (SWC) Fantasy Football API. 
+This API provides read-only access to info from the Sports World Central (SWC) Fantasy Football API.
 The endpoints are grouped into the following categories:
+
+## Dank Memes
+Because six seven
 
 ## Analytics
 Get information about health of the API and counts of leagues, teams, and players.
