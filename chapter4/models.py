@@ -1,4 +1,5 @@
 """SQLAlchemy models"""
+
 from sqlalchemy import Column, ForeignKey, Integer, String, Float, Date
 from sqlalchemy.orm import relationship
 
@@ -17,10 +18,8 @@ class Player(Base):
 
     performances = relationship("Performance", back_populates="player")
 
-
     # Many-to-many relationship between Player and Team tables
-    teams = relationship("Team", secondary="team_player", 
-                         back_populates="players")    
+    teams = relationship("Team", secondary="team_player", back_populates="players")
 
 
 class Performance(Base):
@@ -52,23 +51,20 @@ class Team(Base):
 
     team_id = Column(Integer, primary_key=True, index=True)
     team_name = Column(String, nullable=False)
-    last_changed_date = Column(Date, nullable=False)    
+    last_changed_date = Column(Date, nullable=False)
 
     league_id = Column(Integer, ForeignKey("league.league_id"))
 
     league = relationship("League", back_populates="teams")
 
-    players = relationship("Player", secondary="team_player", 
-                           back_populates="teams")
+    players = relationship("Player", secondary="team_player", back_populates="teams")
+
 
 class TeamPlayer(Base):
     __tablename__ = "team_player"
 
-    team_id = Column(Integer, ForeignKey("team.team_id"), 
-                     primary_key=True, index=True)
-    player_id = Column(Integer, ForeignKey("player.player_id"), 
-                       primary_key=True, index=True)
-    last_changed_date = Column(Date, nullable=False)    
-
-    
-
+    team_id = Column(Integer, ForeignKey("team.team_id"), primary_key=True, index=True)
+    player_id = Column(
+        Integer, ForeignKey("player.player_id"), primary_key=True, index=True
+    )
+    last_changed_date = Column(Date, nullable=False)
