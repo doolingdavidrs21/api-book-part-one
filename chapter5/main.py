@@ -32,7 +32,7 @@ Get information about all the SWC fantasy football leagues and the teams in them
 # FastAPI constructor with additional details added for OpenAPI Specification
 app = FastAPI(
     description=api_description,
-    title="Sports World Central (SWC) Fantasy Football API",
+    title="Sports World Central (SWC) Fantasy Football API Go Patriots 2025-2026 First to Last",
     version="0.1",
 )
 
