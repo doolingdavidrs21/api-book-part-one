@@ -22,6 +22,7 @@ The SDK looks for a value of `SWC_API_BASE_URL` in the environment. The preferre
 
 ```
 SWC_API_BASE_URL={URL of your API}
+SWC_API_BASE_URL=https://aws-api-container.xnkp6vj8k4sar.us-west-2.cs.amazonlightsail.com/
 ```
 
 You may also set this value as an environment variable in the environment you are using the SDK, or pass it as a parameter to the `SWCConfig()` method.
