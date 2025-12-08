@@ -7,6 +7,12 @@ To install this SDK in your environment, execute the following command:
 
 `pip install swcpy@git+https://github.com/{owner of repo}/portfolio-project#subdirectory=sdk`
 
+## Installing swcpy
+
+To install this SDK in your environment, execute the following command:
+
+`pip install swcpy@git+https://github.com/doolingdavidrs21/api-book-part-one#subdirectory=chapter7/sdk`
+
 ## Example Usage
 
 This SDK implements all the endpoints in the SWC API, in addition to providing bulk downloads of the SWC fantasy data in CSV format.
