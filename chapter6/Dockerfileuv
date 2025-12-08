@@ -1,0 +1,32 @@
+# Start with the slim parent image
+FROM python:3.10-slim
+
+# 1. Install uv
+# The official recommendation is to copy the binary from the astral-sh image
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+# Set the Docker working directory
+WORKDIR /code
+
+# 2. Copy the project definition files first
+# We copy these alone first to leverage Docker layer caching.
+# If your code changes but dependencies don't, Docker skips the install step on rebuilds.
+COPY pyproject.toml uv.lock /code/
+
+# 3. Install dependencies
+# --frozen: strict install from uv.lock (fails if lock file is out of sync)
+# --no-cache: keeps the image size small
+RUN uv sync --frozen --no-cache
+
+# 4. Update PATH environment variable
+# uv sync installs into a virtual environment at /code/.venv by default.
+# We must add this to the PATH so the system finds 'uvicorn' automatically.
+ENV PATH="/code/.venv/bin:$PATH"
+
+# Copy the code files and database from the build context directory
+COPY *.py /code/
+COPY *.db /code/
+
+# Launch the Uvicorn web server
+# Because of the PATH command above, this runs the uvicorn inside the .venv
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
