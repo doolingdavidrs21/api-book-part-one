@@ -8,7 +8,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 
-class SWCClint:
+class SWCClient:
     """Interacts with the SportsWorldCentral API.
 
     This SDK class simplifies the process of using the SWC
