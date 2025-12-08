@@ -1,6 +1,6 @@
 # SportsWorldCentral (SWC) Fantasy Football API Documenation
 
-Thanks for using the SportsWorldCentral API. This is your one-stop shop for 
+Thanks for using the SportsWorldCentral API. This is your one-stop shop for
 accessing data from our fantasy football webiste, www.Sportsworldcentral.com.
 
 
@@ -20,7 +20,10 @@ accessing data from our fantasy football webiste, www.Sportsworldcentral.com.
 ## Public API
 *Coming Soon*
 
-We'll be deploying our application soon. Check back for the public API address.
+Our API is hosted at [https://aws-api-container.xnkp6vj8k4sar.us-west-2.cs.amazonlightsail.com/](https://aws-api-container.xnkp6vj8k4sar.us-west-2.cs.amazonlightsail.com/). You can access the interactive documentation at [https://aws-api-container.xnkp6vj8k4sar.us-west-2.cs.amazonlightsail.com/docs](https://aws-api-container.xnkp6vj8k4sar.us-west-2.cs.amazonlightsail.com/docs)
+
+You can view the OpenAPI Specification (OAS) file at
+[https://aws-api-container.xnkp6vj8k4sar.us-west-2.cs.amazonlightsail.com/openapi.json](https://aws-api-container.xnkp6vj8k4sar.us-west-2.cs.amazonlightsail.com/openapi.json)
 
 ## Getting Started
 
@@ -31,7 +34,7 @@ JSON data.
 
 ### Analytics
 
-Get information about the health of the API and counts of leagues, teams, 
+Get information about the health of the API and counts of leagues, teams,
 and players.
 
 ### Player
@@ -52,7 +55,7 @@ Get information about all the SWC fantasy football leagues and the teams in them
 
 By using the API, you agree to the following terms of service:
 
-- **Usage Limits**: You are allowed up to 2000 requests per day. Exceeding this 
+- **Usage Limits**: You are allowed up to 2000 requests per day. Exceeding this
                     limit may result in your API key being suspended.
 - **No Warranty**: We don't provide any warranty of the API or its operation.
 
