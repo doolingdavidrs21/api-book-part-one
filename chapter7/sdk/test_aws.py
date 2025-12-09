@@ -22,3 +22,22 @@ try:
 except Exception as e:
     print("\nERROR: Could not connect to AWS.")
     print(e)
+
+
+# ... (keep previous code)
+
+print("\n--- Testing Bulk Download ---")
+try:
+    # This uses the URL we fixed earlier
+    csv_bytes = client.get_bulk_player_file()
+
+    # Check if we got data back
+    print(f"Success! Downloaded {len(csv_bytes)} bytes of player data.")
+
+    # Optional: Save it to see if it's real
+    with open("downloaded_players.csv", "wb") as f:
+        f.write(csv_bytes)
+    print("Saved to 'downloaded_players.csv'")
+
+except Exception as e:
+    print("Bulk download failed:", e)
